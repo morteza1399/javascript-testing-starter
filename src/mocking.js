@@ -14,6 +14,7 @@ export function getPriceInCurrency(price, currency) {
 // Exercise
 export function getShippingInfo(destination) {
   const quote = getShippingQuote(destination);
+
   if (!quote) return 'Shipping Unavailable';
   return `Shipping Cost: $${quote.cost} (${quote.estimatedDays} Days)`;
 }
@@ -57,7 +58,7 @@ export function isOnline() {
   const [open, close] = availableHours;
   const currentHour = new Date().getHours();
 
-  return currentHour >= open && currentHour <= close;
+  return currentHour >= open && currentHour < close;
 }
 
 // Exercise
