@@ -1,2 +1,2 @@
-npx vitest run
 npm run check-types
+npx vitest run
